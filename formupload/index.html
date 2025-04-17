@@ -9,32 +9,63 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+  
   <div class="form-container">
     <h2>Registration Form</h2>
     <form id="userForm">
       <div class="form-group">
         <label for="name">Name:</label>
-        <input type="text" placeholder="Enter your name" id="name" />
+        <input type="text" placeholder="Enter your name" id="name" name="name" />
       </div>
 
       <div class="form-group">
         <label for="email">Email:</label>
-        <input type="text" placeholder="Enter your email" id="email" />
+        <input type="text" placeholder="Enter your email" id="email" name="email" />
       </div>
 
       <div class="form-group">
         <label for="mobile">Mobile No:</label>
-        <input type="text" placeholder="Enter your mobile number" id="mobile" />
+        <input type="number" placeholder="Enter your mobile number" id="mobile" name="mobile"  />
       </div>
 
-      <div class="form-group">
-        <label for="gender">Gender:</label>
-        <input type="text" placeholder="Enter your gender" id="gender" />
-      </div>
+
+<!-- 
+     
+<div class="form-group">
+  <label for="gender">Gender:</label> 
+  <select name="gender" id="gender" required>
+    <option value="" disabled selected>Select Gender</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Other">Other</option>  
+  </select>
+</div> -->
+
+
+    
+      
+<div class="form-group" id="form-group-id">
+  <label for="gender">Gender:</label><br>
+
+  
+  <label for="gender-male">Male</label><br>
+  <input type="radio" id="gender-male" name="gender-radio" value="Male"/>
+
+
+  <label for="gender-female">Female</label><br>
+  <input type="radio" id="gender-female" name="gender-radio" value="Female"/>  
+
+  <label for="gender-other">Other</label><br>
+  <input type="radio" id="gender-other" name="gender-radio" value="Other"/>
+
+  <input type="hidden" id="gender" name="gender" />
+</div>
+
+     
 
       <div class="form-group">
         <label for="file">Upload File:</label>
-        <input type="file" id="file" name="file" accept="image/png,image/jpeg" />
+        <input type="file" id="file" name="file" accept=".csv" />
       </div>
 
       <div class="form-group">
@@ -44,6 +75,14 @@
 
       <input type="submit" id="submit" value="Submit" />
     </form>
+    
+    <div id="loader" style="display: none;">
+  <div class="spinner"></div>
+</div>
+
+ 
+</div>
+
   </div>
   <script src="script.js">
     
